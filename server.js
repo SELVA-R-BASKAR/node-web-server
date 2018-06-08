@@ -1,6 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
-
+const port = process.env.PORT || 3000;
 console.log('cni');
 
 var app = express();
@@ -38,4 +38,6 @@ app.get('/bad',(req,res) => {
       errormsg: 'unable to connect'
     });
 });
-app.listen(3000);
+app.listen(port,() => {
+    console.log(`SERVER is up on port ${port}`);
+});
